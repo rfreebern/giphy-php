@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+$script = array_shift($argv);
+$query = implode(' ', $argv);
+
+if (empty($query)) {
+    fwrite(STDERR, "Usage: $script <query terms>\n");
+    fwrite(STDERR, "Example: $script whiskey\n");
+    exit(1);
+}
+
+require __DIR__ . '/../src/rfreebern/Giphy.php';
+
+$giphy = new \rfreebern\Giphy();
+$result = $giphy->random($query);
+
+if ($result) {
+    print $result->data->image_original_url . "\n";
+    exit(0);
+}
+
+print "Error.\n";
+exit(0);
