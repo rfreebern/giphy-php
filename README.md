@@ -12,7 +12,7 @@ There is a file named ```giphy``` in the ```bin``` directory. Use it like this:
 
     $ ./bin/giphy whiskey
 
-## Usage
+## GIF Usage
 
     $giphy = new \rfreebern\Giphy();
     $result = $giphy->random('whiskey');
@@ -50,6 +50,37 @@ Fetches a random GIF, optionally matching the given tag.
 ### trending($limit = 25)
 
 Fetches a list of trending GIFs.
+
+## Sticker Usage
+
+    $sticker = new \rfreebern\Sticker();
+    $result = $sticker->random('whiskey');
+    print $result->data->image_original_url;
+
+By default, the constructor uses the shared beta API key, but if you have a key
+of your own you can pass it as an argument:
+
+    $giphy = new \rfreebern\Giphy($my_giphy_api_key);
+
+In general, the methods in the ```Giphy``` class reflect the endpoints of the
+Giphy API, and take the same arguments.
+
+### search($query, $limit = 25, $offset = 0)
+
+Searches for stickers matching ```$query```.
+
+### translate($query)
+
+Translates a query to a matching sticker. See [the docs](https://github.com/giphy/GiphyAPI#translate-endpoint)
+for more information.
+
+### random($tag = null)
+
+Fetches a random sticker, optionally matching the given tag.
+
+### trending($limit = 25)
+
+Fetches a list of trending stickers.
 
 ## Credits
 
