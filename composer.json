@@ -2,7 +2,7 @@
     "name": "rfreebern/giphy-php",
     "description": "A library implementing access to the Giphy API.",
     "keywords": ["giphy", "gif" , "gifs", "images", "search"],
-    "license": "CC0",
+    "license": "CC0-1.0",
     "authors": [
         {
             "name": "Ryan Freebern",
